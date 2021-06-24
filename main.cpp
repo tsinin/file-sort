@@ -1,5 +1,5 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <vector>
 
 #include "file_generation.h"
@@ -11,7 +11,7 @@ int main() {
 
     std::sort(strings.begin(), strings.end());
     std::cout << "std::sorted\n";
-    file_sorting::sortFile("../file", "../new_file", 1L<<30);
+    file_sorting::sortFile("../file", "../new_file", 1L << 30);
     std::cout << "externally sorted\n";
 
     std::ifstream input("../new_file", std::ios_base::in);

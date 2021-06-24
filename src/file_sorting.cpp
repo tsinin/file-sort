@@ -2,15 +2,15 @@
 // Created by tsinin on 6/24/21.
 //
 
-#include <iostream>
-#include <vector>
 #include <filesystem>
 #include <fstream>
+#include <iostream>
 #include <map>
+#include <vector>
 
 namespace file_sorting {
 
-    void sortFile(const std::string& path, const std::string& newPath, uint64_t maxBytesForUse) {
+    void sortFile(const std::string &path, const std::string &newPath, uint64_t maxBytesForUse) {
         std::ifstream input(path, std::ios_base::in);
         if (!input.is_open()) {
             std::cerr << "file_sorting::sortFile: error while opening input file.\n";
@@ -41,10 +41,10 @@ namespace file_sorting {
             std::ofstream tmp_file(tmpFileNamePrefix + std::to_string(blockNum), std::ios_base::out | std::ios_base::trunc);
             if (!tmp_file.is_open()) {
                 std::cerr << "file_sorting::sortFile: error while opening temporary file " +
-                             tmpFileNamePrefix + std::to_string(blockNum) + " for sorting [1]\n";
+                                     tmpFileNamePrefix + std::to_string(blockNum) + " for sorting [1]\n";
                 return;
             }
-            for (const auto& str : strings) {
+            for (const auto &str : strings) {
                 tmp_file << str << '\n';
             }
             tmp_file.close();
@@ -62,7 +62,7 @@ namespace file_sorting {
             blocks[i].open(tmpFileNamePrefix + std::to_string(i), std::ios_base::in);
             if (!blocks[i].is_open()) {
                 std::cerr << "file_sorting::sortFile: error while opening temporary file " +
-                             tmpFileNamePrefix + std::to_string(i) + " for sorting [2]\n";
+                                     tmpFileNamePrefix + std::to_string(i) + " for sorting [2]\n";
                 return;
             }
         }
@@ -109,4 +109,4 @@ namespace file_sorting {
         std::filesystem::remove_all("../tmp_sorting");
     }
 
-}   // namespace file_sorting
+}// namespace file_sorting

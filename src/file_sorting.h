@@ -8,8 +8,8 @@
 
 namespace file_sorting {
 
-    void sortFile(const std::string& path, const std::string& newPath, uint64_t maxBytesForUse);
+    void sortFile(const std::string &path, const std::string &newPath, uint64_t maxBytesForUse);
 
-}   // namespace file_sorting
+}// namespace file_sorting
 
 #endif//FILE_SORT_FILE_SORTING_H
