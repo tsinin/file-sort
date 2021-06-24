@@ -2,8 +2,8 @@
 #include <fstream>
 #include <vector>
 
-#include "src/file_generation.h"
-#include "src/file_sorting.h"
+#include "file_generation.h"
+#include "file_sorting.h"
 
 int main() {
     auto strings = file_generation::generateTextFile("../file", 1000000, 1000, true);
